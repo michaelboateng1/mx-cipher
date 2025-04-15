@@ -1,0 +1,236 @@
+/* FONT */
+@font-face {
+  font-family: "invisible";
+  src: url(./invisible_2/Invisible-ExtraBold.otf);
+}
+
+@font-face {
+  font-family: "akanta";
+  src: url(./akanta/Akanta\ DEMO.ttf);
+}
+
+@font-face {
+  font-family: "Outfit";
+  src: url(./Outfit/Outfit-VariableFont_wght.ttf);
+}
+
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Outfit", sans-serif;
+}
+
+/* UTILITIES SETTINGS */
+.center {
+  text-align: center;
+}
+
+.offscreen {
+  position: absolute;
+  right: 1000%;
+}
+
+::selection {
+  background-color: yellow;
+  color: red;
+}
+
+/* GENERAL STYLE */
+body {
+  height: 100vh;
+  background-color: black;
+  background: url("./8oXf.gif");
+  color: snow;
+  display: grid;
+  grid-template-columns: repeat(9, 1fr);
+  grid-template-rows: 70px auto 30px;
+  grid-template-areas:
+    "hd hd hd hd hd hd hd hd hd"
+    "mn mn mn mn mn mn mn mn mn"
+    "ft ft ft ft ft ft ft ft ft";
+}
+
+/* HEADER */
+.header {
+  grid-area: hd;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+  background: /*linear-gradient(hsla(0, 0%, 0%, 0.4), hsla(0, 0%, 0%, 0.4)),*/ linear-gradient(
+      hsla(120, 100%, 25%, 0.2),
+      hsla(120, 100%, 25%, 0.2)
+    ),
+    url("./images\ \(2\).jpeg");
+  filter: saturate(1.5);
+}
+
+.header h1 {
+  font-size: 2.5rem;
+  text-shadow: 3px 3px 3px #000;
+  font-weight: bolder;
+  font-family: "invisible";
+  font-family: "Outfit";
+}
+
+/* MAIN */
+.main {
+  grid-area: mn;
+}
+
+.container {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  /* padding: 5px 0; */
+}
+
+/* .encrypt-padding {
+} */
+
+.container .encryption-form {
+  width: 70%;
+  padding: 25px 10px;
+  /* padding: 10px; */
+  /* border: 5px solid green; */
+  height: 100%;
+}
+
+.encryption-form .clearText {
+  resize: none;
+  outline: none;
+  padding: 15px;
+  border-radius: 5px;
+  font-size: 1rem;
+  width: 100%;
+  color: forestgreen;
+  filter: saturate(2.5);
+  /* color: snow; */
+  font-weight: 700;
+  background: linear-gradient(hsla(0, 0%, 0%, 0.5), hsla(0, 0%, 0%, 0.5)),
+    url("./landscape-dark-silhouette-1209933.jpeg") center center/cover;
+  border: none;
+  letter-spacing: 1.3px;
+  word-spacing: 2px;
+  line-height: 1.5;
+  font-family: "invisible";
+}
+
+.container .encryption-details {
+  width: 30%;
+  padding: 10px;
+  background-color: rgb(5, 5, 53);
+  background-color: black;
+}
+
+.encryption-details .btns {
+  height: 10vh;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 20px;
+}
+
+.btns button {
+  flex: 1 2 200px;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 15px;
+  cursor: pointer;
+  font-family: "Outfit";
+}
+
+.btns button:active {
+  filter: saturate(2.5) brightness(70%);
+  cursor: wait;
+}
+
+#encrypt {
+  background-color: red;
+  color: inherit;
+  font-weight: bold;
+}
+
+#decrypt {
+  background-color: blue;
+  color: inherit;
+  font-weight: bold;
+}
+
+.timesContainer {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 10px;
+}
+
+.timesContainer .number_of_decryption {
+  background-color: blue;
+  padding: 5px;
+  border-radius: 5px;
+  font-weight: bold;
+  margin-left: 30%;
+  cursor: default;
+}
+
+.timesContainer .number_of_encryption {
+  background-color: red;
+  padding: 5px;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: default;
+}
+
+.encryption-details .details {
+  height: 29vh;
+  /* opacity: 0; */
+  transition: 0.5s;
+}
+
+.details h3 {
+  font-size: 1.5rem;
+  font-family: "akanta";
+}
+
+.details p {
+  background-color: rgb(5, 5, 31);
+  height: 70%;
+  margin-top: 20px;
+  overflow: auto;
+  color: inherit;
+  border: 2px ridge black;
+  font-size: 0.9rem;
+  padding: 10px;
+}
+
+.animation {
+  animation: animate 0.5s ease-in-out 0.3s;
+}
+
+@keyframes animate {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+/* FOOTER */
+.footer {
+  grid-area: ft;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  padding: 10px;
+  background-color: black;
+}
+
+.footer .copyright {
+  align-self: flex-end;
+  font-family: "Outfit";
+}
